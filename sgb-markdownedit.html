@@ -1,0 +1,255 @@
+
+<!--
+Copyright 2014 Starcounter. All rights reserved.
+-->
+
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/sgb-markdownview.html"> 
+<link rel="import" href="bower_components/sgb-markdown.html"> 
+
+<polymer-element name="sgb-markdownedit" attributes="value index footer placeholder uploadurl">
+
+	<template>
+
+		<style>
+
+			:host {
+
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+
+				flex-direction: column;			
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+
+				-webkit-align-items:stretch;
+				align-items:stretch;
+				-ms-align-items:stretch;
+			}
+
+			.tabHeader {
+
+				-webkit-flex: 0 1 auto;
+				flex:  0 1 auto;
+				-ms-flex:  0 1 auto;
+
+				background-color: #f7f7f7;
+				border-color: #dddddd;
+
+				border-style:solid;
+				border-top-width: 1px;
+				border-left-width: 1px;
+				border-right-width: 1px;
+				border-bottom-width: 1px;
+			}	
+
+			#tabPageContent {
+
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+
+				-webkit-flex: 1 0;
+				flex: 1 0;
+				-ms-flex: 1 0;	
+			}
+
+			sgb-markdown {
+
+				-webkit-flex: 1 0;
+				flex: 1 0;
+				-ms-flex: 1 0;	
+			}
+
+			sgb-markdownview {
+
+			   -webkit-flex: 1;
+		        flex: 1;
+        		-ms-flex: 1;
+        						
+				padding: 10px;
+			}
+
+			#tabFooter {
+
+				-webkit-flex: 0 1 auto;
+				flex: 0 1 auto;
+				-ms-flex: 0 1 auto;
+
+				background-color: #f7f7f7;
+				border-color: #dddddd;
+				border-style:solid;
+				border-top-width: 0px;
+				border-left-width: 1px;
+				border-right-width: 1px;
+				border-bottom-width: 1px;	
+			}
+
+			#tabPageContent div {
+
+			   -webkit-flex: 1;
+		        flex: 1;
+        		-ms-flex: 1;
+
+				display: -webkit-box;
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+
+
+				flex-direction: row;			
+				-webkit-flex-direction: row;
+				-ms-flex-direction: row;
+
+				border-color: #dddddd;
+				border-style:solid;
+				border-top-width: 0px;
+				border-left-width: 1px;
+				border-right-width: 1px;
+				border-bottom-width: 0px;
+			}
+
+			#tabPageContent div textarea {
+
+				-webkit-flex: 1;
+				flex: 1;
+				-ms-flex: 1;
+
+				border: 0px;
+				margin: 0px;
+				padding: 10px;
+
+				resize: none;
+
+				background-color: transparent;
+			}	
+
+			.tabButton {
+
+				border-top-width: 1px;
+				border-left-width: 1px;
+				border-right-width: 1px;
+				border-bottom-width: 0px;
+				border-style:solid;
+				border-color: transparent;
+
+				margin-left: 5px;
+				margin-right: 5px;
+				margin-top: 5px;
+				margin-bottom: -1px;
+
+				padding:5px;
+				background-color: transparent;
+				color:#666666;
+				text-decoration:none;
+ 				outline: none;
+ 				cursor:pointer;
+			}
+
+			.tabButton:focus {
+
+ 				outline: none; 
+ 			}	
+
+			.tabButton:active {
+
+ 				outline: none;
+			}
+
+		    .tabButtonSelected {
+
+				border-color: #dddddd;
+				border-style:solid;
+				border-top-width: 1px;
+				border-left-width: 1px;
+				border-right-width: 1px;
+				border-bottom-width: 1px;
+				border-bottom-color:white;
+		        color: black;
+				background-color: white;
+
+				border-top-left-radius:2px;
+				border-top-right-radius:2px;
+			}
+
+		</style>
+
+		<div class="tabHeader">
+			<button class="tabButton {{ {tabButtonSelected:index==0} | tokenList }}" on-click="{{buttonClick1}}">Markdown Splitt view</button>
+			<button class="tabButton {{ {tabButtonSelected:index==1} | tokenList }}" on-click="{{buttonClick2}}">Markdown</button>
+			<button class="tabButton {{ {tabButtonSelected:index==2} | tokenList }}" on-click="{{buttonClick3}}">Preview</button>
+		</div>
+
+		<div id="tabPageContent">
+
+			<div>
+				<sgb-markdown value={{value}} placeholder={{placeholder}} uploadurl={{uploadurl}}></sgb-markdown>
+			</div>
+			
+			<div>
+				<textarea value={{value}} placeholder={{placeholder}}></textarea> 
+			</div>
+
+			<div>
+				<sgb-markdownview value={{value}}></sgb-markdownview>
+			</div>
+		</div>
+
+		<div id="tabFooter"></div>
+	</template>
+
+	<script>
+
+	    "use strict";
+
+	    Polymer('sgb-markdownedit', {
+	    	uploadurl: "",
+	    	placeholder: "",
+	    	index: 0,
+	    	value: "",
+	    	footer: "",
+	      	ready: function() {
+
+	      		this.showPage(this.index);
+	      	},
+
+	      	indexChanged: function( oldValue, newValue) {
+
+	      		this.showPage(newValue);
+	      	},
+
+	      	showPage: function(index) {
+
+      			this.$.tabPageContent.children[0].style.display = "none";
+      			this.$.tabPageContent.children[1].style.display = "none";
+      			this.$.tabPageContent.children[2].style.display = "none";
+
+	      		if(index > 2) return;
+      			this.$.tabPageContent.children[index].style.display = null;
+	      	},
+
+	      	footerChanged: function( oldValue, newValue) {
+	      		this.$.tabFooter.innerHTML = newValue;
+	      	},
+
+	      	buttonClick1: function(event, detail, sender) { 
+
+	      		this.index = 0;
+	      	},
+	      	buttonClick2: function(event, detail, sender) { 
+
+	      		this.index = 1;
+	      	},
+	      	buttonClick3: function(event, detail, sender) { 
+
+	      		this.index = 2;
+	      	}
+	    });
+	</script>
+</polymer-element>
