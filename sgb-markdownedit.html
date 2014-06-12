@@ -189,7 +189,7 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 		<div id="tabPageContent">
 
 			<div>
-				<sgb-markdown value={{value}} placeholder={{placeholder}} uploadurl={{uploadurl}}></sgb-markdown>
+				<sgb-markdown id="mdEdit" value={{value}} placeholder={{placeholder}} uploadurl={{uploadurl}}></sgb-markdown>
 			</div>
 			
 			<div>
@@ -217,6 +217,7 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 	      	ready: function() {
 
 	      		this.showPage(this.index);
+				this.$.mdEdit.addEventListener('fileUploadError', this.onFileUploadError.bind(this));		
 	      	},
 
 	      	indexChanged: function( oldValue, newValue) {
@@ -233,11 +234,10 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 	      		if(index > 2) return;
       			this.$.tabPageContent.children[index].style.display = null;
 	      	},
-
 	      	footerChanged: function( oldValue, newValue) {
+	      		
 	      		this.$.tabFooter.innerHTML = newValue;
 	      	},
-
 	      	buttonClick1: function(event, detail, sender) { 
 
 	      		this.index = 0;
@@ -249,7 +249,13 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 	      	buttonClick3: function(event, detail, sender) { 
 
 	      		this.index = 2;
-	      	}
+	      	},	
+	      	onFileUploadError: function(e) {
+
+				e.stopPropagation();
+				var xFile = e.detail;
+				this.$.tabFooter.innerHTML = xFile.statusText;
+	      	}    
 	    });
 	</script>
 </polymer-element>
