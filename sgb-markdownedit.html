@@ -28,6 +28,8 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 				-webkit-align-items:stretch;
 				align-items:stretch;
 				-ms-align-items:stretch;
+
+				font-size: inherit;
 			}
 
 			.tabHeader {
@@ -40,10 +42,12 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 				border-color: #dddddd;
 
 				border-style:solid;
-				border-top-width: 1px;
-				border-left-width: 1px;
-				border-right-width: 1px;
+				border-top-width: 0px;
+				border-left-width: 0px;
+				border-right-width: 0px;
 				border-bottom-width: 1px;
+
+				font-size: inherit;
 			}	
 
 			#tabPageContent {
@@ -81,13 +85,20 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 				flex: 0 1 auto;
 				-ms-flex: 0 1 auto;
 
-				background-color: #f7f7f7;
+				background-color: #f7f7f7;	
 				border-color: #dddddd;
+/*				
 				border-style:solid;
 				border-top-width: 0px;
 				border-left-width: 1px;
 				border-right-width: 1px;
 				border-bottom-width: 1px;	
+*/
+				border-style:solid;
+				border-top-width: 1px;
+				border-left-width: 0px;
+				border-right-width: 0px;
+				border-bottom-width: 0px;					
 			}
 
 			#tabPageContent div {
@@ -106,13 +117,14 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 				flex-direction: row;			
 				-webkit-flex-direction: row;
 				-ms-flex-direction: row;
-
-				border-color: #dddddd;
+/*
+				border-color: red;
 				border-style:solid;
 				border-top-width: 0px;
-				border-left-width: 1px;
-				border-right-width: 1px;
+				border-left-width: 0px;
+				border-right-width: 0px;
 				border-bottom-width: 0px;
+*/				
 			}
 
 			#tabPageContent div textarea {
@@ -144,12 +156,14 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 				margin-top: 5px;
 				margin-bottom: -1px;
 
-				padding:5px;
+				padding: 5px 10px 5px 10px;
 				background-color: transparent;
 				color:#666666;
 				text-decoration:none;
  				outline: none;
  				cursor:pointer;
+
+				font-size: inherit;
 			}
 
 			.tabButton:focus {
@@ -174,15 +188,17 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 		        color: black;
 				background-color: white;
 
-				border-top-left-radius:2px;
-				border-top-right-radius:2px;
+				border-top-left-radius:4px;
+				border-top-right-radius:4px;
 			}
 
 		</style>
 
+
+
 		<div class="tabHeader">
-			<button class="tabButton {{ {tabButtonSelected:index==0} | tokenList }}" on-click="{{buttonClick1}}">Markdown Splitt view</button>
-			<button class="tabButton {{ {tabButtonSelected:index==1} | tokenList }}" on-click="{{buttonClick2}}">Markdown</button>
+			<button class="tabButton {{ {tabButtonSelected:index==0} | tokenList }}" on-click="{{buttonClick1}}">Markdown</button>
+			<button class="tabButton {{ {tabButtonSelected:index==1} | tokenList }}" on-click="{{buttonClick2}}">Raw</button>
 			<button class="tabButton {{ {tabButtonSelected:index==2} | tokenList }}" on-click="{{buttonClick3}}">Preview</button>
 		</div>
 
