@@ -1,6 +1,6 @@
 # &lt;sgb-markdownedit&gt;
 
-GitHub Flavored Markdown (GFM) editor with preview
+GitHub Flavored Markdown (GFM) editor with filedrop, paste functionality and a preview window
 
 ![Example Screenshot](/sgb-markdownedit.PNG?raw=true "Example Screenshot")
 
