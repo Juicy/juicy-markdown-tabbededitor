@@ -2,6 +2,8 @@
 
 GitHub Flavored Markdown (GFM) edit/preview
 
+![Example Screenshot](/sgb-markdownedit.PNG?raw=true "Example Screenshot")
+
 ## Install
 
 Install the component using [Bower](http://bower.io/):
