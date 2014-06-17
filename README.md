@@ -1,6 +1,6 @@
 # &lt;sgb-markdownedit&gt;
 
-GitHub Flavored Markdown (GFM) edit/preview
+GitHub Flavored Markdown (GFM) editor with preview
 
 ![Example Screenshot](/sgb-markdownedit.PNG?raw=true "Example Screenshot")
 
