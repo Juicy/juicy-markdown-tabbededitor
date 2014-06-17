@@ -1,5 +1,4 @@
 # &lt;sgb-markdownedit&gt;
-================
 
 GitHub Flavored Markdown (GFM) edit/preview
 
