@@ -7,7 +7,10 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 <link rel="import" href="../juicy-markdownview/juicy-markdownview.html"> 
 <link rel="import" href="../juicy-markdown/juicy-markdown.html"> 
 
-<polymer-element name="juicy-markdownedit" attributes="value index footer placeholder uploadurl">
+<polymer-element 
+	name="juicy-markdownedit" 
+	extends="juicy-markdown"
+	attributes="value index footer">
 
 	<template>
 
@@ -205,15 +208,16 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 		<div id="tabPageContent">
 
 			<div>
-				<juicy-markdown id="mdEdit" value={{value}} placeholder={{placeholder}} uploadurl={{uploadurl}}></juicy-markdown>
+				<shadow id="mdEdit"></shadow>
+				<!-- <juicy-markdown id="mdEdit" value="{{value}}" ... -->
 			</div>
 			
 			<div>
-				<textarea value={{value}} placeholder={{placeholder}}></textarea> 
+				<textarea value="{{value}}" placeholder="{{placeholder}}"></textarea> 
 			</div>
 
 			<div>
-				<juicy-markdownview value={{value}}></juicy-markdownview>
+				<juicy-markdownview value="{{value}}" ghcss="{{ghcss}}"></juicy-markdownview>
 			</div>
 		</div>
 
@@ -225,15 +229,12 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 	    "use strict";
 
 	    Polymer('juicy-markdownedit', {
-	    	uploadurl: "",
-	    	placeholder: "",
 	    	index: 0,
-	    	value: "",
 	    	footer: "",
 	      	ready: function() {
-
 	      		this.showPage(this.index);
-				this.$.mdEdit.addEventListener('fileUploadError', this.onFileUploadError.bind(this));		
+				// this.super(); // if we would not "use strict"	
+				Polymer.getRegisteredPrototype("juicy-markdown").ready.apply(this,arguments);
 	      	},
 
 	      	indexChanged: function( oldValue, newValue) {

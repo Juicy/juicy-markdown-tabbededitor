@@ -41,11 +41,18 @@ Or [download as ZIP](https://github.com/Juicy/juicy-markdownedit/archive/master.
 
 Attribute      | Options   | Default  | Description
 ---            | ---       | ---      | ---
+`index`        | *number*  | ``       | Index of a tab to be shown by default.
+`footer`       | *string*  | ``       | Text/HTML to be shown as a footer.
+
+This component extends [`<juicy-markdown>`](https://github.com/Juicy/juicy-markdown) so check its [options](https://github.com/Juicy/juicy-markdown#options)
+
+Attribute      | Options   | Default  | Description
+---            | ---       | ---      | ---
 `value`        | *string*  | ``       | Markdown to render.
 `placeholder`  | *string*  | ``       | Input placeholder.
 `uploadurl`    | *string*  | ``       | URL to files storage server, see [`<juicy-filedrop url>`](https://github.com/Juicy/juicy-filedrop#options).
-`index`        | *number*  | ``       | Index of a tab to be shown by default.
-`footer`       | *string*  | ``       | Text/HTML to be shown as a footer.
+`customheader` | *string*  | `x-file` | Name for custom header that contains JSON with file meta data, see [`<juicy-filedrop customheader>`](https://github.com/Juicy/juicy-filedrop#options).
+`ghcss`        | *boolean* | `false`  | Should ghithub-markdown.css be imported? see [`<juicy-markdownview ghcss>`](https://github.com/Juicy/juicy-markdownview#options).
 
 
 ## Contributing
