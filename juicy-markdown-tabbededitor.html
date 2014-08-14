@@ -4,12 +4,12 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 -->
 
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../juicy-markdownview/juicy-markdownview.html"> 
 <link rel="import" href="../juicy-markdown/juicy-markdown.html"> 
+<link rel="import" href="../juicy-markdown-editor/juicy-markdown-editor.html"> 
 
 <polymer-element 
-	name="juicy-markdownedit" 
-	extends="juicy-markdown"
+	name="juicy-markdown-tabbededitor" 
+	extends="juicy-markdown-editor"
 	attributes="value index footer">
 
 	<template>
@@ -66,14 +66,14 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 				-ms-flex: 1 0;	
 			}
 
-			juicy-markdown {
+			juicy-markdown-editor {
 
 				-webkit-flex: 1 0;
 				flex: 1 0;
 				-ms-flex: 1 0;	
 			}
 
-			juicy-markdownview {
+			juicy-markdown {
 
 			   -webkit-flex: 1;
 		        flex: 1;
@@ -217,7 +217,7 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 			</div>
 
 			<div>
-				<juicy-markdownview value="{{value}}" ghcss="{{ghcss}}"></juicy-markdownview>
+				<juicy-markdown value="{{value}}" ghcss="{{ghcss}}"></juicy-markdown>
 			</div>
 		</div>
 
@@ -228,13 +228,13 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 
 	    "use strict";
 
-	    Polymer('juicy-markdownedit', {
+	    Polymer('juicy-markdown-tabbededitor', {
 	    	index: 0,
 	    	footer: "",
 	      	ready: function() {
 	      		this.showPage(this.index);
 				// this.super(); // if we would not "use strict"	
-				Polymer.getRegisteredPrototype("juicy-markdown").ready.apply(this,arguments);
+				Polymer.getRegisteredPrototype("juicy-markdown-editor").ready.apply(this,arguments);
 	      	},
 
 	      	indexChanged: function( oldValue, newValue) {

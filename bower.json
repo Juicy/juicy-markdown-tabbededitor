@@ -1,12 +1,12 @@
 {
-  "name": "juicy-markdownedit",
+  "name": "juicy-markdown-tabbededitor",
   "version": "0.0.0",
-  "homepage": "https://github.com/Juicy/juicy-markdownedit",
+  "homepage": "https://github.com/Juicy/juicy-markdown-tabbededitor",
   "authors": [
     "andwah <anders.wahlgren@societyobjects.com>",
     "Tomek Wytrebowicz <tomalecpub@gmail.com>"
   ],
-  "description": "Markdown edit",
+  "description": "Polymer Element with GitHub Flavored Markdown (GFM) editor with file drop, paste functionality and a preview tab",
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "polymer": "polymer/polymer#~0.3.4",
-    "juicy-markdownview": "*",
-    "juicy-markdown": "*"
+    "juicy-markdown": "*",
+    "juicy-markdown-editor": "*"
   }
 }

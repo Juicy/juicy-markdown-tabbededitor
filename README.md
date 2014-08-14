@@ -1,21 +1,21 @@
-# &lt;juicy-markdown&gt;
+# &lt;juicy-markdown-tabbededitor&gt;
 
-> Polymer Element with GitHub Flavored Markdown (GFM) editor with file drop, paste functionality and a preview window
+> Polymer Element with GitHub Flavored Markdown (GFM) editor with file drop, paste functionality and a preview tab
 
 ## Demo
 ![Preview](preview.png?raw=true "Preview")
 
-[Check it live!](http://Juicy.github.io/juicy-markdownedit)
+[Check it live!](http://Juicy.github.io/juicy-markdown-tabbededitor)
 
 ## Install
 
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install juicy-markdownedit --save
+$ bower install juicy-markdown-tabbededitor --save
 ```
 
-Or [download as ZIP](https://github.com/Juicy/juicy-markdownedit/archive/master.zip).
+Or [download as ZIP](https://github.com/Juicy/juicy-markdown-tabbededitor/archive/gh-pages.zip).
 
 ## Usage
 
@@ -28,13 +28,13 @@ Or [download as ZIP](https://github.com/Juicy/juicy-markdownedit/archive/master.
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="bower_components/juicy-markdownedit/juicy-markdownedit.html">
+    <link rel="import" href="bower_components/juicy-markdown-tabbededitor/juicy-markdown-tabbededitor.html">
     ```
 
 3. Start using it!
 
     ```html
-    <juicy-markdownedit></juicy-markdownedit>
+    <juicy-markdown-tabbededitor></juicy-markdown-tabbededitor>
     ```
 
 ## Options
@@ -44,7 +44,7 @@ Attribute      | Options   | Default  | Description
 `index`        | *number*  | ``       | Index of a tab to be shown by default.
 `footer`       | *string*  | ``       | Text/HTML to be shown as a footer.
 
-This component extends [`<juicy-markdown>`](https://github.com/Juicy/juicy-markdown) so check its [options](https://github.com/Juicy/juicy-markdown#options)
+This component extends [`<juicy-markdown-editor>`](https://github.com/Juicy/juicy-markdown-editor) so check its [options](https://github.com/Juicy/juicy-markdown-editor#options)
 
 Attribute      | Options   | Default  | Description
 ---            | ---       | ---      | ---
@@ -52,7 +52,7 @@ Attribute      | Options   | Default  | Description
 `placeholder`  | *string*  | ``       | Input placeholder.
 `uploadurl`    | *string*  | ``       | URL to files storage server, see [`<juicy-filedrop url>`](https://github.com/Juicy/juicy-filedrop#options).
 `customheader` | *string*  | `x-file` | Name for custom header that contains JSON with file meta data, see [`<juicy-filedrop customheader>`](https://github.com/Juicy/juicy-filedrop#options).
-`ghcss`        | *boolean* | `false`  | Should ghithub-markdown.css be imported? see [`<juicy-markdownview ghcss>`](https://github.com/Juicy/juicy-markdownview#options).
+`ghcss`        | *boolean* | `false`  | Should ghithub-markdown.css be imported? see [`<juicy-markdown ghcss>`](https://github.com/Juicy/juicy-markdown#options).
 
 
 ## Contributing
@@ -65,4 +65,4 @@ Attribute      | Options   | Default  | Description
 
 ## History
 
-For detailed changelog, check [Releases](https://github.com/Juicy/juicy-markdownedit/releases).
+For detailed changelog, check [Releases](https://github.com/Juicy/juicy-markdown-tabbededitor/releases).
