@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>&lt;juicy-markdownedit&gt;</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/github-markdown-css/0.2.0/github-markdown.min.css">
+    <style>
+        juicy-markdownedit{
+            width: calc( 100% - 2em ); 
+            margin: 1em;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    </style>
+
+    <!-- Importing Web Component's Polyfill -->
+    <script src="//cdn.jsdelivr.net/polymer.platform/0.3.4/platform.js"></script>
+
+    <!-- Importing Custom Elements -->
+    <link rel="import" href="juicy-markdownedit.html">
+</head>
+<body class="markdown-body">
+<a href="https://github.com/Juicy/juicy-markdownedit"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+	<h1>&lt;juicy-markdownedit&gt;</h1>
+	<p>
+		GitHub Flavored Markdown (GFM) editor with filedrop, paste functionality and a preview window
+	</p>
+    <!-- Using Custom Elements -->
+    <juicy-markdownedit id="markdown" 
+        uploadurl="/api/blogapp/media" 
+        placeholder="Enter markdown text" 
+        footer="<p style='padding:10px;margin:0px'>Attach <strong>images</strong> by dragging &amp; dropping, selecting them, or pasting from the clipboard.</p>" 
+        value="## <juicy-markdownedit>
+> GitHub Flavored Markdown (GFM) editor with filedrop, paste functionality and a preview window
+
+```
+<juicy-markdownedit
+  value=&quot;# Here goes the .md text&quot;>
+</markdownedit>
+```">
+</juicy-markdownedit >
+
+</body>
+</html>
