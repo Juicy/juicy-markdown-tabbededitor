@@ -1,7 +1,7 @@
 {
-  "name": "sgb-markdownedit",
+  "name": "juicy-markdownedit",
   "version": "0.0.0",
-  "homepage": "https://github.com/Smorgasbord-Development/sgb-markdownedit",
+  "homepage": "https://github.com/Juicy/juicy-markdownedit",
   "authors": [
     "andwah <anders.wahlgren@societyobjects.com>"
   ],
@@ -15,8 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "polymer/polymer#~0.3.1",
-    "sgb-markdownview": "*",
-    "sgb-markdown": "*"
+    "polymer": "polymer/polymer#~0.3.4",
+    "juicy-markdownview": "*",
+    "juicy-markdown": "*"
   }
 }

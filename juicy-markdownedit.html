@@ -4,10 +4,10 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 -->
 
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../sgb-markdownview/sgb-markdownview.html"> 
-<link rel="import" href="../sgb-markdown/sgb-markdown.html"> 
+<link rel="import" href="../juicy-markdownview/juicy-markdownview.html"> 
+<link rel="import" href="../juicy-markdown/juicy-markdown.html"> 
 
-<polymer-element name="sgb-markdownedit" attributes="value index footer placeholder uploadurl">
+<polymer-element name="juicy-markdownedit" attributes="value index footer placeholder uploadurl">
 
 	<template>
 
@@ -63,14 +63,14 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 				-ms-flex: 1 0;	
 			}
 
-			sgb-markdown {
+			juicy-markdown {
 
 				-webkit-flex: 1 0;
 				flex: 1 0;
 				-ms-flex: 1 0;	
 			}
 
-			sgb-markdownview {
+			juicy-markdownview {
 
 			   -webkit-flex: 1;
 		        flex: 1;
@@ -205,7 +205,7 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 		<div id="tabPageContent">
 
 			<div>
-				<sgb-markdown id="mdEdit" value={{value}} placeholder={{placeholder}} uploadurl={{uploadurl}}></sgb-markdown>
+				<juicy-markdown id="mdEdit" value={{value}} placeholder={{placeholder}} uploadurl={{uploadurl}}></juicy-markdown>
 			</div>
 			
 			<div>
@@ -213,7 +213,7 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 			</div>
 
 			<div>
-				<sgb-markdownview value={{value}}></sgb-markdownview>
+				<juicy-markdownview value={{value}}></juicy-markdownview>
 			</div>
 		</div>
 
@@ -224,7 +224,7 @@ Copyright 2014 Smörgåsbord Development. All rights reserved.
 
 	    "use strict";
 
-	    Polymer('sgb-markdownedit', {
+	    Polymer('juicy-markdownedit', {
 	    	uploadurl: "",
 	    	placeholder: "",
 	    	index: 0,
