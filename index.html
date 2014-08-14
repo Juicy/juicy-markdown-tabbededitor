@@ -24,11 +24,15 @@
     <script src="../juicy-markdown/test/mockServer.js"></script>
 </head>
 <body class="markdown-body">
-<a href="https://github.com/Juicy/juicy-markdown-tabbededitor"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-	<h1>&lt;juicy-markdown-tabbededitor&gt;</h1>
-	<p>
-		GitHub Flavored Markdown (GFM) editor with filedrop, paste functionality and a preview window
-	</p>
+    <a href="https://github.com/Juicy/juicy-markdown-tabbededitor"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <h1>
+        &lt;juicy-markdown-tabbededitor&gt;
+        <iframe src="http://ghbtns.com/github-btn.html?user=juicy&repo=juicy-filedrop&type=watch&count=true&size=medium"
+    allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
+    </h1>
+    <p>
+    	GitHub Flavored Markdown (GFM) editor with filedrop, paste functionality and a preview window
+    </p>
     <!-- Using Custom Elements -->
     <juicy-markdown-tabbededitor
         uploadurl="/storage/server/path" 
@@ -44,6 +48,10 @@
 </markdown-tabbededitor>
 ```">
 </juicy-markdown-tabbededitor>
+
+<p>
+    Please note, that for this demo we use mock server (<a href="https://github.com/cjohansen/Sinon.JS">Sinon.JS</a>). So observe console, as <code>juicy-filedrop</code>'s request will not reach network tab.
+</p>
 
 </body>
 </html>
