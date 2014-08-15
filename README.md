@@ -54,6 +54,11 @@ Attribute      | Options   | Default  | Description
 `customheader` | *string*  | `x-file` | Name for custom header that contains JSON with file meta data, see [`<juicy-filedrop customheader>`](https://github.com/Juicy/juicy-filedrop#options).
 `ghcss`        | *boolean* | `false`  | Should ghithub-markdown.css be imported? see [`<juicy-markdown ghcss>`](https://github.com/Juicy/juicy-markdown#options).
 
+## See also
+
+ - [`<juicy-markdown>`](https://github.com/Juicy/juicy-markdown) - Markdown viewer
+ - [`<juicy-filedrop>`](https://github.com/Juicy/juicy-filedrop) - just file drop panel
+ - [`<juicy-markdown-tabbededitor>`](https://github.com/Juicy/juicy-markdown-editor) - simpler Markdown editor
 
 ## Contributing
 
