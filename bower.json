@@ -7,6 +7,14 @@
     "Tomek Wytrebowicz <tomalecpub@gmail.com>"
   ],
   "description": "Polymer Element with GitHub Flavored Markdown (GFM) editor with file drop, paste functionality and a preview tab",
+  "keywords": [
+    "polymer",
+    "web-components",
+    "juicy",
+    "markdown",
+    "github",
+    "editor"
+  ],
   "license": "MIT",
   "main": "juicy-markdown-tabbededitor.html",
   "ignore": [
