@@ -25,7 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "polymer/polymer#~0.3.4",
+    "polymer": "polymer/polymer#~0.5.5",
     "juicy-markdown": "*",
     "juicy-markdown-editor": "*"
   }
