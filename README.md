@@ -15,7 +15,7 @@ Install the component using [Bower](http://bower.io/):
 $ bower install juicy-markdown-tabbededitor --save
 ```
 
-Or [download as ZIP](https://github.com/Juicy/juicy-markdown-tabbededitor/archive/gh-pages.zip).
+Or [download as ZIP](https://github.com/Juicy/juicy-markdown-tabbededitor/archive/master.zip).
 
 ## Usage
 
