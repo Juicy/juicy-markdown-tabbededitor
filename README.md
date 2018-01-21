@@ -1,3 +1,5 @@
+:warning: This element is **DEPRECATED**. See [the deprecation announcement](https://github.com/Juicy/juicy-markdown-tabbededitor/issues/6).
+
 # &lt;juicy-markdown-tabbededitor&gt;
 
 > Polymer Element with GitHub Flavored Markdown (GFM) editor with file drop, paste functionality and a preview tab
